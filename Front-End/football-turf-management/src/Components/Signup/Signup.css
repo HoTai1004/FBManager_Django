@@ -1,0 +1,57 @@
+.Signup-form {
+  margin-top: 100px;
+  padding-left: 390px;
+  padding-top: 1px;
+  background: url(../../Images/welcome);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 440px;
+  border-radius: 1.5rem;
+  max-width: 1068px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-control {
+  margin: 6px 0px;
+}
+
+label {
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+input {
+  margin: 5px 0px;
+  padding: 8px;
+  border-radius: 1rem;
+  width: 45%;
+}
+
+.button {
+  width: 45%;
+  padding: 7px;
+  font-size: 17px;
+  border-radius: 1rem;
+  border: none;
+  color: #fff;
+  background-color: #2288ff;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #3492fd;
+}
+
+.Already-Account {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.Already-Account a {
+  color: #fff ;
+  font-size: 20px;
+}

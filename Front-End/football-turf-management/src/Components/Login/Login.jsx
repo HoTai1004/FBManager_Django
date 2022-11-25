@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./Header.css";
-import 'boxicons';
-import { Home } from '../Home/Home';
+import './Login.css';
 
-export const Header = () => {
+export const Login = () => {
   return (
     <>
       <header>
@@ -29,13 +27,30 @@ export const Header = () => {
             <li><a href="#properties">Properties</a></li>
           </ul>
 
-          {/* Login button */}
-          <Link to={"/login"}>
-            <a href="" className='btn'>Login</a>
+          {/* Signup button */}
+          <Link to={"/signup"}>
+            <a href="#" className='btn'>Sign up</a>
           </Link>
         </div>
       </header>
-      <Home/>
+
+      {/* Login page */}
+      <div className='login-form'>
+        <div className='form-control'>
+          <label htmlFor='email'>Email address</label>
+          <input type="email" placeholder='example@gmail.com' required />
+        </div>
+        <div className='form-control'>
+          <label htmlFor='password'>Password</label>
+          <input type="password" placeholder='password' required />
+        </div>
+        <button className='button'>Login</button>    
+        <div className='forget-password'>
+          <Link to={"/signup"}>
+            <a href="" className='abc'>Forget Password ?</a>
+          </Link>
+        </div>
+      </div>
     </>
   );
-};
+};  
