@@ -1,6 +1,6 @@
 .Signup-form {
   margin-top: 100px;
-  padding-left: 390px;
+  padding-left: 350px;
   padding-top: 1px;
   background: url(../../Images/welcome);
   background-repeat: no-repeat;
@@ -28,11 +28,11 @@ input {
   margin: 5px 0px;
   padding: 8px;
   border-radius: 1rem;
-  width: 45%;
+  width: 50%;
 }
 
 .button {
-  width: 45%;
+  width: 50%;
   padding: 7px;
   font-size: 17px;
   border-radius: 1rem;
@@ -48,7 +48,7 @@ input {
 
 .Already-Account {
   margin-top: 10px;
-  margin-left: 40px;
+  margin-left: 75px;
 }
 
 .Already-Account a {

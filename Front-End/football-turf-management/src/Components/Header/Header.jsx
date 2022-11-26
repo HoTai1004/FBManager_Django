@@ -10,10 +10,12 @@ export const Header = () => {
       <header>
         <div className='nav container'>
           {/* Logo */}
-          <a href="" className='logo'>
-            <box-icon name='home' color='#2288ff' ></box-icon>
-            Football Turf Management
-          </a>
+          <Link to={"/"}>
+            <a href="" className='logo'>
+              <box-icon name='home' color='#2288ff' ></box-icon>
+              Football Turf Management
+            </a>
+          </Link>
 
           {/* Menu icon */}
           <input type="checkbox" name="" id="menu" />
