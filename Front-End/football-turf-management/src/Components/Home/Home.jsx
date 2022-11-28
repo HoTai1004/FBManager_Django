@@ -9,7 +9,7 @@ export const Home = () => {
       <div className='home-text'>
         <h1>Find Your Next Perfect<br />Football Turf To Play <br /> With Your Friends.</h1>
         <Link to={"/signup"}>
-          <a href="#" className='btn'>Sign up</a>
+          <button className='btn'>Sign up</button>
         </Link>
       </div>
     </section>

@@ -8,10 +8,10 @@ export const Signup = () => {
       <header>
         <div className='nav-container'>
           {/* Logo */}
-          <a href="" className='logo'>
+          <div className='logo'>
             <box-icon name='home' color='#2288ff' ></box-icon>
             Football Turf Management
-          </a>
+          </div>
 
           {/* Nav list */}
           <ul className='navbar'>
@@ -23,7 +23,7 @@ export const Signup = () => {
 
           {/* Signup button */}
           <Link to={"/login"}>
-            <a href="" className='btn'>Login</a>
+            <button className='btn'>Login</button>
           </Link>
         </div>
       </header>
@@ -31,19 +31,19 @@ export const Signup = () => {
       {/* Signup page */}
       <div className='Signup-form'>
         <div className='form-control'>
-          <label htmlFor='name'>Full Name</label>
+          <div className='name'>Full Name</div>
           <input type="text" placeholder='Your Name' required />
         </div>
         <div className='form-control'>
-          <label htmlFor='email'>Email address</label>
+          <div className='email'>Email address</div>
           <input type="email" placeholder='example@gmail.com' required />
         </div>
         <div className='form-control'>
-          <label htmlFor='email'>Phone Number</label>
+          <div className='phone'>Phone Number</div>
           <input type="text" placeholder='Enter Your Number' required />
         </div>
         <div className='form-control'>
-          <label htmlFor='password'>Password</label>
+          <div className='password'>Password</div>
           <input type="password" placeholder='At Least 8 characters' required />
         </div>
         <button className='button'>Signup</button>

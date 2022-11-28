@@ -6,15 +6,15 @@ import { Home } from '../Home/Home';
 
 export const Header = () => {
   return (
-    <>
+    <div>
       <header>
         <div className='nav-container'>
           {/* Logo */}
           <Link to={"/"}>
-            <a href="" className='logo'>
+            <div className='logo'>
               <box-icon name='home' color='#2288ff' ></box-icon>
               Football Turf Management
-            </a>
+            </div>
           </Link>
 
           {/* Nav list */}
@@ -27,11 +27,11 @@ export const Header = () => {
 
           {/* Login button */}
           <Link to={"/login"}>
-            <a href="" className='btn'>Login</a>
+            <button className='btn'>Login</button>
           </Link>
         </div>
       </header>
       <Home />
-    </>
+    </div>
   );
 };

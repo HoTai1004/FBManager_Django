@@ -52,12 +52,14 @@ export const TurfList = () => {
       <div className='rent-center list'>
         {turfs.map((turf, i) => {
           return (
-            <Turf
-              key={i}
-              label={turf.label}
-              imgSrc={turf.src}
-              price={turf.price}
-            />
+            <Link to={`${turf.id}`}>
+              <Turf
+                key={i}
+                label={turf.label}
+                imgSrc={turf.src}
+                price={turf.price}
+              />
+            </Link>
           )
         })}
       </div>
@@ -66,13 +68,62 @@ export const TurfList = () => {
 };
 
 const turfs = [
-  { label: "Football turf in Chuyen Viet", price: 700, src: require("../../Images/p1.jpg"), },
-  { label: "Football turf in Tuyen Son", price: 200, src: require("../../Images/p2"), },
-  { label: "Football turf in Duy Tan", price: 300, src: require("../../Images/p3"), },
-  { label: "Football turf in Truong Chinh", price: 400, src: require("../../Images/p4"), },
-  { label: "Football turf in Trung Nu Vuong", price: 100, src: require("../../Images/p5"), },
-  { label: "Football turf in Trang Hoang", price: 350, src: require("../../Images/p6"), },
-  { label: "Football turf in Ba Dinh", price: 450, src: require("../../Images/p7"), },
-  { label: "Football turf in My Nhat Quang", price: 550, src: require("../../Images/p2"), },
+  {
+    id: "1",
+    label: "Football turf in Chuyen Viet",
+    price: 700,
+    src: require("../../Images/p1.jpg"),
+    smallTurf: [
+      {},
+    ]
+  },
 
+  {
+    id: "2",
+    label: "Football turf in Tuyen Son",
+    price: 200,
+    src: require("../../Images/p2"),
+  },
+
+  {
+    id: "3",
+    label: "Football turf in Duy Tan",
+    price: 300,
+    src: require("../../Images/p3"),
+  },
+
+  {
+    id: "4",
+    label: "Football turf in Truong Chinh",
+    price: 400,
+    src: require("../../Images/p4"),
+  },
+
+  {
+    id: "5",
+    label: "Football turf in Trung Nu Vuong",
+    price: 100,
+    src: require("../../Images/p5"),
+  },
+
+  {
+    id: "6",
+    label: "Football turf in Trang Hoang",
+    price: 350,
+    src: require("../../Images/p6"),
+  },
+
+  {
+    id: "7",
+    label: "Football turf in Ba Dinh",
+    price: 450,
+    src: require("../../Images/p7"),
+  },
+
+  {
+    id: "8",
+    label: "Football turf in My Nhat Quang",
+    price: 550,
+    src: require("../../Images/p2"),
+  },
 ]

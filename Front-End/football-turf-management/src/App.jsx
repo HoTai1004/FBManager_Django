@@ -4,6 +4,7 @@ import { Header } from './Components/Header/Header';
 import { Login } from './Components/Login/Login';
 import { Signup } from './Components/Signup/Signup';
 import { TurfList } from './Components/TurfList/TurfList';
+import { TurfInfo } from './Components/TurfInfo/TurfInfo';
 import './App.scss';
 
 export const App = () => {
@@ -13,7 +14,11 @@ export const App = () => {
         <Route path="/" element={<Header />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
-        <Route path='/turflist' element={<TurfList />} />
+
+        <Route path='/turflist'  >
+          <Route index element={<TurfList />} />
+          <Route path=':id' element={<TurfInfo />} />
+        </Route>
         <Route path='*' element={<Navigate to={"/"} />} />
       </Routes>
     </div>

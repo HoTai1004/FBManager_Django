@@ -42,11 +42,13 @@ header {
       }
     }
 
-    .btn {
+    button {
       padding: 8px 22px;
       background: var(--main-color);
       border-radius: 5rem;
       color: var(--bg-color);
+      border: none;
+      cursor: pointer;
 
       &:hover {
         background: #2288ff;
@@ -66,14 +68,20 @@ header {
   max-width: 1068px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 80px;
+  padding-top: 60px;
   padding-left: 370px;
 
   &>.form-control {
     margin: 6px 0px;
-    display: block;
 
-    label {
+
+    &>.email {
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &>.password {
       color: #fff;
       font-weight: bold;
       font-size: 20px;

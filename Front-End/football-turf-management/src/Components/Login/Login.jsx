@@ -8,10 +8,10 @@ export const Login = () => {
       <header>
         <div className='nav-container'>
           {/* Logo */}
-          <a href="" className='logo'>
+          <div className='logo'>
             <box-icon name='home' color='#2288ff' ></box-icon>
             Football Turf Management
-          </a>
+          </div>
 
           {/* Nav list */}
           <ul className='navbar'>
@@ -23,7 +23,7 @@ export const Login = () => {
 
           {/* Signup button */}
           <Link to={"/signup"}>
-            <a href="" className='btn'>Sign up</a>
+            <button className='btn'>Sign up</button>
           </Link>
         </div>
       </header>
@@ -31,11 +31,11 @@ export const Login = () => {
       {/* Login page */}
       <div className='login-form'>
         <div className='form-control'>
-          <label htmlFor='email'>Email address</label>
+          <div className='email'>Email address</div>
           <input type="email" placeholder='example@gmail.com' required />
         </div>
         <div className='form-control'>
-          <label htmlFor='password'>Password</label>
+          <div className='password'>Password</div>
           <input type="password" placeholder='password' required />
         </div>
         <button className='button'>Login</button>

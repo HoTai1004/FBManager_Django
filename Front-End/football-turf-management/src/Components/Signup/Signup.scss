@@ -42,11 +42,13 @@ header {
       }
     }
 
-    .btn {
+    button {
       padding: 8px 22px;
       background: var(--main-color);
       border-radius: 5rem;
       color: var(--bg-color);
+      border: none;
+      cursor: pointer;
 
       &:hover {
         background: #2288ff;
@@ -57,13 +59,13 @@ header {
 
 .Signup-form {
   margin-top: 100px;
-  padding-left: 350px;
-  padding-top: 1px;
+  padding-left: 370px;
+  padding-top: 40px;
   background: url(../../Images/welcome);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 440px;
+  height: 550px;
   border-radius: 1.5rem;
   max-width: 1068px;
   margin-left: auto;
@@ -73,7 +75,10 @@ header {
     margin: 7px 0px;
     display: block;
 
-    &>label {
+    &>.name,
+    .email,
+    .phone,
+    .password {
       color: #fff;
       font-weight: bold;
       font-size: 20px;
@@ -97,6 +102,20 @@ header {
     color: #fff;
     background-color: #2288ff;
     cursor: pointer;
+
+    &:hover {
+      background-color: #3492fd;
+    }
+  }
+
+  &>.Already-Account {
+    margin-top: 10px;
+    margin-left: 55px;
+
+    a {
+      color: #fff;
+      font-size: 20px;
+    }
   }
 }
 
