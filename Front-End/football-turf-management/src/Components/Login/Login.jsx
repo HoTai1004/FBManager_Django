@@ -1,23 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css';
+import './Login.scss';
 
 export const Login = () => {
   return (
     <>
       <header>
-        <div className='nav container'>
+        <div className='nav-container'>
           {/* Logo */}
           <a href="" className='logo'>
             <box-icon name='home' color='#2288ff' ></box-icon>
             Football Turf Management
           </a>
-
-          {/* Menu icon */}
-          <input type="checkbox" name="" id="menu" />
-          <label htmlFor="menu">
-            <box-icon name='menu' id="menu-icon"></box-icon>
-          </label>
 
           {/* Nav list */}
           <ul className='navbar'>
@@ -29,7 +23,7 @@ export const Login = () => {
 
           {/* Signup button */}
           <Link to={"/signup"}>
-            <a href="#" className='btn'>Sign up</a>
+            <a href="" className='btn'>Sign up</a>
           </Link>
         </div>
       </header>
@@ -44,10 +38,10 @@ export const Login = () => {
           <label htmlFor='password'>Password</label>
           <input type="password" placeholder='password' required />
         </div>
-        <button className='button'>Login</button>    
+        <button className='button'>Login</button>
         <div className='forget-password'>
           <Link to={"/signup"}>
-            <a href="" className='abc'>Forget Password ?</a>
+            <a href="">Forget Password ?</a>
           </Link>
         </div>
       </div>

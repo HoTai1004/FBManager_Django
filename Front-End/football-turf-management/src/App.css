@@ -1,8 +1,0 @@
-/* Making responsive */
-@media (max-width: 1080px) {
-  .container {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-}
-

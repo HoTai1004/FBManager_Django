@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchTurf.css';
+import './SearchTurf.scss';
 
 export const SearchTurf = () => {
   return (

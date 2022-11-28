@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SearchTurf } from '../SearchTurf/SearchTurf';
 import { Turf } from '../Turf/Turf';
-import './TurfList.css';
+import './TurfList.scss';
 
 export const TurfList = () => {
   return (
     <>
       <header>
-        <div className='nav container'>
+        <div className='nav-container'>
           {/* Logo */}
           <Link to={"/"}>
             <a href="" className='logo'>

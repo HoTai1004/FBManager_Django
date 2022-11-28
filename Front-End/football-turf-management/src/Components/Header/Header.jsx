@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "./Header.css";
+import "./Header.scss";
 import 'boxicons';
 import { Home } from '../Home/Home';
 
@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <>
       <header>
-        <div className='nav container'>
+        <div className='nav-container'>
           {/* Logo */}
           <Link to={"/"}>
             <a href="" className='logo'>
@@ -16,12 +16,6 @@ export const Header = () => {
               Football Turf Management
             </a>
           </Link>
-
-          {/* Menu icon */}
-          <input type="checkbox" name="" id="menu" />
-          <label htmlFor="menu">
-            <box-icon name='menu' id="menu-icon"></box-icon>
-          </label>
 
           {/* Nav list */}
           <ul className='navbar'>
@@ -37,7 +31,7 @@ export const Header = () => {
           </Link>
         </div>
       </header>
-      <Home/>
+      <Home />
     </>
   );
 };
