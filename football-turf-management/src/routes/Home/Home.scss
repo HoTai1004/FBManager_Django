@@ -1,0 +1,38 @@
+.home-container {
+  margin-top: 100px;
+  background: url(./main);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 440px;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  max-width: 1068px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &>.home-text {
+    padding-left: 23px;
+
+    h1 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 8px 22px;
+      background: var(--main-color);
+      border-radius: 5rem;
+      color: var(--bg-color);
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+
+      &:hover {
+        background: #2288ff;
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+header {
+  color: var(--text-color);
+  display: block;
+  width: 100%;
+  background-color: var(--bg-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  &>.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5px;
+    max-width: 1068px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--text-color);
+      text-transform: uppercase;
+    }
+
+    &>.navbar {
+      display: flex;
+
+      &>li {
+        padding: 8px 17px;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 500;
+
+        &>a {
+          color: var(--text-color);
+        }
+      }
+    }
+
+    button {
+      padding: 8px 22px;
+      background: var(--main-color);
+      border-radius: 5rem;
+      color: var(--bg-color);
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background: #2288ff;
+      }
+    }
+  }
+}
+
+.login-form {
+  margin-top: 100px;
+  background: url(./welcome);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 440px;
+  border-radius: 1.5rem;
+  max-width: 1068px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 60px;
+  padding-left: 370px;
+
+  &>.form-control {
+    margin: 6px 0px;
+
+
+    &>.email {
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &>.password {
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    input {
+      margin: 5px 0px;
+      padding: 8px;
+      padding-right: 20px;
+      border-radius: 1rem;
+      width: 45%;
+    }
+  }
+
+  &>.button {
+    width: 45%;
+    padding: 7px;
+    font-size: 17px;
+    border-radius: 1rem;
+    border: none;
+    color: #fff;
+    background-color: #2288ff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #3492fd;
+    }
+  }
+
+
+  &>.forget-password {
+    margin-top: 10px;
+    margin-left: 77px;
+
+    a {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+}

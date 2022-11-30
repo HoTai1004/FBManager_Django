@@ -1,0 +1,24 @@
+.search-form {
+  margin-top: 30px;
+
+  &>.form-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+
+    &>label {
+      color: #314862;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    &>input {
+      margin: 5px 0px;
+      padding: 8px;
+      padding-right: 20px;
+      border-radius: 1rem;
+      width: 45%;
+    }
+  }
+}

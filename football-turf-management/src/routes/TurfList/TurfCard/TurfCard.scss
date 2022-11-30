@@ -1,0 +1,60 @@
+.turf-card-w43 {
+  transition: all 300ms ease-in-out;
+  background-color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 10px 10px 10px;
+  width: 220px;
+
+
+  &:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  &>.status {
+    display: flex;
+    column-gap: 0.3rem;
+    margin-bottom: 5px;
+    font-size: 13px;
+
+
+    &>.featured {
+      background-color: #43c370;
+      color: #fff;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    &>.checkout {
+      background-color: #e0203b;
+      color: #fff;
+      padding: 2px 5px;
+      border-radius: 5px;
+    }
+  }
+
+  &>.image {
+    &>img {
+      height: 200px;
+      width: 200px;
+    }
+  }
+
+  &>.info {
+    &>.line1 {
+      font-weight: bold;
+    }
+
+    &>.line2 {
+      position: relative;
+      font-weight: bold;
+
+      &>.icon {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+    }
+  }
+}
