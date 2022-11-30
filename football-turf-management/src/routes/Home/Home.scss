@@ -21,17 +21,21 @@
       margin-bottom: 1rem;
     }
 
-    button {
+    &>.btn {
       padding: 8px 22px;
       background: var(--main-color);
       border-radius: 5rem;
-      color: var(--bg-color);
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
 
-      &:hover {
-        background: #2288ff;
+      &>button {
+        cursor: pointer;
+        font-size: 1rem;
+        color: var(--bg-color);
+        border: none;
+        background: var(--main-color);
+
+        &:hover {
+          background: #2288ff;
+        }
       }
     }
   }

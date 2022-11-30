@@ -15,7 +15,6 @@ export const Turf = () => {
     const getTurf = async () => {
       const turf = await authApi.getTurf(turfId);
       setTurf(turf);
-      console.log(turf);
     };
     getTurf();
   }, [turfId]);

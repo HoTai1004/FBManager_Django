@@ -14,8 +14,8 @@ export const Home = () => {
             <br />
             Football Turf To Play <br /> With Your Friends.
           </h1>
-          <Link to={"/signup"}>
-            <button className="btn">Sign up</button>
+          <Link to={"/signup"} className="btn">
+            <button>Sign up</button>
           </Link>
         </div>
       </section>

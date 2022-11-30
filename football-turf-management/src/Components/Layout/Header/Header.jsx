@@ -38,8 +38,8 @@ export const Header = () => {
         </div>
 
         {/* Login button */}
-        <Link to={"/login"}>
-          <button className="btn">Login</button>
+        <Link to={"/login"} className="btn">
+          <button>Login</button>
         </Link>
       </div>
     </header>

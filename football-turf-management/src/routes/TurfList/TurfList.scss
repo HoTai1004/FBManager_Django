@@ -1,17 +1,24 @@
+.turf-list-it4 {
 
-.title {
-  margin-top: 100px;
-  text-align: center;
-}
+  &>.title {
+    margin-top: 100px;
+    text-align: center;
+  }
 
-.list-container .list {
-  margin: 30px auto;
-  max-width: 70vw;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
-  gap: 3rem 0.2rem;
+  &>.list-container {
 
-  background-color: #f0f4f7;
-  padding: 30px 30px;
-  border-radius: 5px;
+    @media (min-width: 900px) {
+
+      &>.list {
+        margin: 30px auto;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        background-color: #f0f4f7;
+        padding: 30px 30px;
+        border-radius: 5px;
+      }
+    }
+  }
 }

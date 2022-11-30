@@ -23,9 +23,9 @@ export const TurfList = () => {
     <Layout>
       <div className="turf-list-it4">
         <div className="title">
-          <h1>Properties For Rent</h1>
+          <h1>Football Turfs For Rent</h1>
           <p>
-            Search over 2000 properties to rent from the top agents in the city.
+            Search over 8 football turfs to rent from the list below in the city.
           </p>
         </div>
 
@@ -38,12 +38,12 @@ export const TurfList = () => {
             {!data
               ? "Loading..."
               : data.map((turf, i) => {
-                  return (
-                    <Link to={`${turf.id}`} key={i}>
-                      <TurfCard turf={turf} />
-                    </Link>
-                  );
-                })}
+                return (
+                  <Link to={`${turf.id}`} key={i}>
+                    <TurfCard turf={turf} />
+                  </Link>
+                );
+              })}
           </div>
         </div>
       </div>

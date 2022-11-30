@@ -2,8 +2,11 @@ import React from "react";
 import "./TurfCard.scss";
 
 export const TurfCard = ({ turf }) => {
+
   const { label, imgSrc, subTurfs } = turf;
+
   const lowestPrice = Math.min(...subTurfs.map((s) => s.price));
+
   return (
     <div className="turf-card-w43">
       <div className="status">
