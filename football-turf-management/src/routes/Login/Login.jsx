@@ -9,7 +9,7 @@ export const Login = () => {
       <div className="login-form">
         <div className="form-control">
           <div className="username">Username</div>
-          <input type="username" placeholder="username..." required />
+          <input type="text" placeholder="username..." required />
         </div>
         <div className="form-control">
           <div className="password">Password</div>
