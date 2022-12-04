@@ -1,7 +1,3 @@
-// img {
-//   width: 100%;
-// }
-
 header {
   color: var(--text-color);
   display: block;
@@ -10,13 +6,12 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
 
   &>.nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 5px;
+    padding: 7px 5px;
     max-width: 1068px;
     margin-left: auto;
     margin-right: auto;
@@ -57,14 +52,14 @@ header {
     }
 
     &>.btn {
-      padding: 0px 3px;
-      background: var(--main-color);
-      border-radius: 5rem;
-      color: var(--bg-color);
-      border: none;
-      cursor: pointer;
 
       &>button {
+        padding: 7px 25px;
+        border-radius: 5rem;
+        color: var(--bg-color);
+        cursor: pointer;
+        background: var(--main-color);
+        border: none;
         font-size: 1rem;
 
         &:hover {

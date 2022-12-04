@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { authApi } from "../../api/mock-api";
 import { Layout } from "../../Components/Layout/Layout";
 import { SearchTurf } from "../../Components/SearchTurf/SearchTurf";
-import "./TurfList.scss";
 import { TurfCard } from "./TurfCard/TurfCard";
+import "./TurfList.scss";
 
 export const TurfList = () => {
   const [data, setData] = useState();

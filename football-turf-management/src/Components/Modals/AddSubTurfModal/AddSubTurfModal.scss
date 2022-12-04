@@ -1,0 +1,49 @@
+.add-subturf-modal {
+
+  &>.add-form-m89 {
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 20px;
+    overflow: auto;
+
+    &>.form-control-n90 {
+      margin: 30px 10px;
+      display: flex;
+      align-items: center;
+      column-gap: 0.6rem;
+
+      &>.name,
+      .price,
+      .image-turf {
+        color: var(--text-color);
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      input {
+        margin: 5px 0px;
+        padding: 8px;
+        padding-right: 20px;
+        border-radius: 1rem;
+        width: 85%;
+      }
+    }
+
+    &>.add-btn {
+      margin-left: 10px;
+      width: 95%;
+      padding: 7px;
+      font-size: 17px;
+      border-radius: 1rem;
+      border: none;
+      color: #fff;
+      background-color: #02d62d;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #02f032;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.add-turf-modal {
+
+  &>.add-form {
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 20px;
+    overflow: auto;
+
+    &>.form-control-n76 {
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      column-gap: 0.6rem;
+
+      &>.name,
+      .image-turf {
+        color: var(--text-color);
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      input {
+        margin: 5px 0px;
+        padding: 8px;
+        padding-right: 20px;
+        border-radius: 1rem;
+        width: 85%;
+      }
+    }
+
+    &>.add-btn {
+      margin-left: 30px;
+      width: 89%;
+      padding: 7px;
+      font-size: 17px;
+      border-radius: 1rem;
+      border: none;
+      color: #fff;
+      background-color: #02d62d;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #02f032;
+      }
+    }
+  }
+}

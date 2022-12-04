@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import { BookSubTurfModal } from "../../../Components/Modals/BookSubTurfModal/BookSubTurfModal";
+import { ModalServiceContext } from "../../../Components/Modal/ModalService";
 import "./SubTurfCard.scss";
 
 export const SubTurfCard = ({ subTurf }) => {
+
+  const { openModal } = useContext(ModalServiceContext);
+
   const { label, imgSrc, price } = subTurf;
+
   return (
-    <div className="sub-turf-card-f32">
+    <div
+      className="sub-turf-card-f32"
+      onClick={() => openModal({
+        title: "",
+        width: "400px",
+        content: ({ close }) => <BookSubTurfModal close={close} />
+      })}
+    >
       <div className="status">
         <div className="featured">FEATURED</div>
-        <div className="checkout">CHECK OUT</div>
+        <div className="available">AVAILABLE</div>
       </div>
 
       <div className="image">

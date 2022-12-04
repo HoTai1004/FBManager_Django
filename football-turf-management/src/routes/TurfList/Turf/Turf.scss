@@ -1,18 +1,21 @@
-.title {
-  margin-top: 100px;
-  text-align: center;
-}
+.turf-64d {
 
-@media (min-width: 900px) {
+  .title {
+    margin-top: 100px;
+    text-align: center;
+  }
 
-  .list-w567 {
-    margin: 30px auto;
-    max-width: 1000px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    background-color: #f0f4f7;
-    padding: 30px 30px;
-    border-radius: 5px;
+  @media (min-width: 900px) {
+
+    .list-w567 {
+      margin: 30px auto;
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      background-color: #f0f4f7;
+      padding: 30px 30px;
+      border-radius: 5px;
+    }
   }
 }

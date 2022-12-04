@@ -1,0 +1,56 @@
+.modal-container {
+
+  &>.book-modal-container {
+    background-color: #fff;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+
+    &>.content {
+      text-align: center;
+      margin-top: 5px;
+      color: var(--text-color);
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    &>.button-container {
+      display: flex;
+      justify-content: center;
+      column-gap: 0.9rem;
+      margin: 30px auto;
+
+      &>.yes-btn {
+        padding: 7px;
+        font-size: 17px;
+        border-radius: 1rem;
+        border: none;
+        color: #fff;
+        background-color: #02d62d;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #02f032;
+        }
+      }
+
+      &>.no-btn {
+
+        padding: 7px;
+        font-size: 17px;
+        border-radius: 1rem;
+        border: none;
+        color: #fff;
+        background-color: #e0203b;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f04662;
+        }
+      }
+    }
+  }
+}

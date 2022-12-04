@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Select from 'react-select'
-import { Link } from "react-router-dom";
+import { AddSubTurfModal } from "../Modals/AddSubTurfModal/AddSubTurfModal";
+import { ModalServiceContext } from "../Modal/ModalService";
 import './SelectTimeAndInfoManagement.scss';
 
 export const SelectTimeAndInfoManagement = () => {
+
+  const { openModal } = useContext(ModalServiceContext);
+
   return (
     <div className="select-manage">
       <div className='form-control'>
@@ -11,11 +15,16 @@ export const SelectTimeAndInfoManagement = () => {
         <box-icon name='time-five'></box-icon>
         <Select options={timeFrames} className="select" />
       </div>
-      <Link>
-        <button className="manage-info">
-          Manage Info
-        </button>
-      </Link>
+      <button
+        className="manage-info"
+        onClick={() => openModal({
+          title: "Add sub turf",
+          width: "500px",
+          content: ({ close }) => <AddSubTurfModal close={close} />
+        })}
+      >
+        Add sub turf
+      </button>
     </div>
   );
 };

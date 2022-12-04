@@ -8,12 +8,12 @@ export const Login = () => {
     <Layout>
       <div className="login-form">
         <div className="form-control">
-          <div className="email">Email address</div>
-          <input type="email" placeholder="example@gmail.com" required />
+          <div className="username">Username</div>
+          <input type="username" placeholder="username..." required />
         </div>
         <div className="form-control">
           <div className="password">Password</div>
-          <input type="password" placeholder="password" required />
+          <input type="password" placeholder="password..." required />
         </div>
         <button className="button">Login</button>
         <div className="forget-password">
