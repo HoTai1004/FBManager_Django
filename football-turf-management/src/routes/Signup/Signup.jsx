@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Layout } from "../../Components/Layout/Layout";
+import { RoleApi } from "../../api/mock-api";
 import "./Signup.scss";
 
-export const Signup = () => {
+export const SignupOwner = () => {
   return (
     <Layout>
       <div className="Signup-form">
@@ -12,12 +13,20 @@ export const Signup = () => {
           <input type="text" placeholder="Your Name" required />
         </div>
         <div className="form-control">
-          <div className="email">Email address</div>
-          <input type="email" placeholder="example@gmail.com" required />
+          <div className="address">Address</div>
+          <input type="address" placeholder="91 abc street...." required />
         </div>
         <div className="form-control">
           <div className="phone">Phone Number</div>
           <input type="text" placeholder="Enter Your Number" required />
+        </div>
+        <div className="form-control">
+          <div className="image">Image</div>
+          <input type="file" />
+        </div>
+        <div className="form-control">
+          <div className="balance">Balance</div>
+          <input type="number" placeholder="$0..." required />
         </div>
         <div className="form-control">
           <div className="password">Password</div>
@@ -36,4 +45,54 @@ export const Signup = () => {
       </div>
     </Layout>
   );
+};
+
+export const SignupRenter = () => {
+  return (
+    <Layout>
+      <div className="Signup-form">
+        <div className="form-control">
+          <div className="name">Full Name</div>
+          <input type="text" placeholder="Your Name" required />
+        </div>
+        <div className="form-control">
+          <div className="phone">Phone Number</div>
+          <input type="text" placeholder="Enter Your Number" required />
+        </div>
+        <div className="form-control">
+          <div className="image">Image</div>
+          <input type="file" />
+        </div>
+        <div className="form-control">
+          <div className="balance">Balance</div>
+          <input type="number" placeholder="$0..." required />
+        </div>
+        <div className="form-control">
+          <div className="password">Password</div>
+          <input type="password" placeholder="At Least 8 characters" required />
+        </div>
+        <button className="button">
+          Signup
+        </button>
+        <div className="Already-Account">
+          <Link to={"/login"}>
+            <a href="" className="abc">
+              Already have account
+            </a>
+          </Link>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export const Signup = () => {
+
+  if (RoleApi.role === "owner") {
+    return <SignupOwner />
+  }
+
+  if (RoleApi.role === "renter") {
+    return <SignupRenter />
+  }
 };

@@ -6,11 +6,28 @@ export const guestApi = {
   signIn: () => { },
 };
 
+export const RoleApi = {
+
+  role: "",
+
+  getRole: async () => {
+    await waitTimeout(500);
+    return RoleApi.role;
+  },
+
+  setRole: async (value) => {
+    await waitTimeout(500);
+    RoleApi.role = value;
+  },
+}
+
 export const authApi = {
+
   getTurfList: async () => {
     await waitTimeout(500);
     return turfs;
   },
+
   getTurf: async (turfId) => {
     await waitTimeout(500);
     return turfs.find((turf) => turf.id === turfId);
