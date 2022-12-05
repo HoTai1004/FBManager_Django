@@ -23,7 +23,9 @@ export const Signup = () => {
           <div className="password">Password</div>
           <input type="password" placeholder="At Least 8 characters" required />
         </div>
-        <button className="button">Signup</button>
+        <button className="button">
+          Signup
+        </button>
         <div className="Already-Account">
           <Link to={"/login"}>
             <a href="" className="abc">

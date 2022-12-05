@@ -1,10 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Home.scss";
 import "boxicons";
+import { useContext } from "react";
+import { SelectRoleModal } from "../../Components/Modals/SelectRoleModal/SelectRoleModal";
+import { ModalServiceContext } from "../../Components/Modal/ModalService";
 import { Layout } from "../../Components/Layout/Layout";
 
 export const Home = () => {
+
+  const { openModal } = useContext(ModalServiceContext);
+
   return (
     <Layout>
       <section className="home-container" id="home">
@@ -14,9 +19,17 @@ export const Home = () => {
             <br />
             Football Turf To Play <br /> With Your Friends.
           </h1>
-          <Link to={"/signup"} className="btn">
-            <button>Sign up</button>
-          </Link>
+
+          <button
+            className="btn"
+            onClick={() => openModal({
+              title: "",
+              width: "350px",
+              content: ({ close }) => <SelectRoleModal close={close} />,
+            })}
+          >
+            Sign up
+          </button>
         </div>
       </section>
     </Layout>
