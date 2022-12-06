@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Layout } from "../../Components/Layout/Layout";
-import { RoleApi } from "../../api/mock-api";
 import "./Signup.scss";
 
 export const SignupOwner = () => {
@@ -88,11 +87,14 @@ export const SignupRenter = () => {
 
 export const Signup = () => {
 
-  if (RoleApi.role === "owner") {
+  const [searchParams] = useSearchParams();
+
+  if (searchParams.get("role") === "owner") {
     return <SignupOwner />
   }
 
-  if (RoleApi.role === "renter") {
+  if (searchParams.get("role") === "renter") {
     return <SignupRenter />
   }
+
 };

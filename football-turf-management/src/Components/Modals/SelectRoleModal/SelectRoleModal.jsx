@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { RoleApi } from "../../../api/mock-api";
 import './SelectRoleModal.scss';
 
 export const SelectRoleModal = ({ close }) => {
@@ -8,11 +7,6 @@ export const SelectRoleModal = ({ close }) => {
   const [state, setState] = useState({ choice: "" });
 
   const navigate = useNavigate();
-
-  const moveToSignUp = () => {
-    RoleApi.setRole(state.choice);
-    navigate("/signup");
-  }
 
   return (
     <div className="form-role">
@@ -34,7 +28,7 @@ export const SelectRoleModal = ({ close }) => {
             alert("You have to choose your role before moving on to the sign-up form");
           } else {
             close();
-            moveToSignUp();
+            navigate(`/signup?role=${state.choice}`);
           }
         }}
       >
