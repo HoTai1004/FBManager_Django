@@ -13,7 +13,7 @@ export const SignupOwner = () => {
         </div>
         <div className="form-control">
           <div className="address">Address</div>
-          <input type="address" placeholder="91 abc street...." required />
+          <input type="address" placeholder="Your Address...." required />
         </div>
         <div className="form-control">
           <div className="phone">Phone Number</div>
@@ -35,10 +35,8 @@ export const SignupOwner = () => {
           Signup
         </button>
         <div className="Already-Account">
-          <Link to={"/login"}>
-            <a href="" className="abc">
-              Already have account
-            </a>
+          <Link to={"/login"} className="abc">
+            Already have account
           </Link>
         </div>
       </div>
@@ -74,10 +72,8 @@ export const SignupRenter = () => {
           Signup
         </button>
         <div className="Already-Account">
-          <Link to={"/login"}>
-            <a href="" className="abc">
-              Already have account
-            </a>
+          <Link to={"/login"} className="abc">
+            Already have account
           </Link>
         </div>
       </div>

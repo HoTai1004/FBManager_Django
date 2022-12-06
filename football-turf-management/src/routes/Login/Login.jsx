@@ -17,7 +17,7 @@ export const Login = () => {
         </div>
         <button className="button">Login</button>
         <div className="forget-password">
-          <Link to={"/signup"}>Forget Password ?</Link>
+          <Link to={""}>Forget Password ?</Link>
         </div>
       </div>
     </Layout>
