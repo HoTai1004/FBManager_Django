@@ -2,6 +2,7 @@ import React from "react";
 import { ModalServiceProvider } from "./Components/Modal/ModalService";
 import { UserContextProvider } from "./contexts/userContext";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { Login } from "./routes/Login/Login";
 import { Signup } from "./routes/Signup/Signup";
 import { TurfList } from "./routes/TurfList/TurfList";
@@ -20,8 +21,10 @@ export const App = () => {
             <Route path="/signup" element={<Signup />} />
 
             <Route path="/turflist">
-              <Route index element={<TurfList />} />
-              <Route path=":turfId" element={<Turf />} />
+              <Route element={<ProtectedRoute />}>
+                <Route index element={<TurfList />} />
+                <Route path=":turfId" element={<Turf />} />
+              </Route>
             </Route>
             <Route path="*" element={<Navigate to={"/"} />} />
           </Routes>

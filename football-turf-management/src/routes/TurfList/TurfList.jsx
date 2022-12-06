@@ -99,11 +99,11 @@ export const TurfList = () => {
 
   const { user } = useContext(UserContext);
 
-  if (user.role === "owner") {
+  if (user?.role === "owner") {
     return <TurfListOwner />;
   }
 
-  if (user.role === "renter") {
+  if (user?.role === "renter") {
     return <TurfListRenter />;
   }
 

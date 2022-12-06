@@ -50,7 +50,15 @@ export const Header = () => {
 
         {/* Login button */}
         {user ? (
-          <button onClick={() => signOut()}>Logout</button>
+          <button
+            className="btn"
+            onClick={() => signOut()}
+            style={{
+
+            }}
+          >
+            Logout
+          </button>
         ) : (
           <Link to={"/login"} className="btn">
             <button>Login</button>
