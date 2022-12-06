@@ -1,8 +1,7 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { authApi } from "../../api/mock-api";
+import { UserContext } from "../../contexts/userContext";
 import { Layout } from "../../Components/Layout/Layout";
 import { SearchTurf } from "../../Components/SearchTurf/SearchTurf";
 import { TurfCard } from "./TurfCard/TurfCard";
@@ -97,8 +96,16 @@ const TurfListRenter = () => {
 
 
 export const TurfList = () => {
-  return (
-    // <TurfListOwner />
-    <TurfListRenter />
-  );
+
+  const { user } = useContext(UserContext);
+
+  if (user.role === "owner") {
+    return <TurfListOwner />;
+  }
+
+  if (user.role === "renter") {
+    return <TurfListRenter />;
+  }
+
+  return null;
 };

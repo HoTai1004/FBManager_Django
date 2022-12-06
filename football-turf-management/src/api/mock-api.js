@@ -1,11 +1,17 @@
 import { waitTimeout } from "../utils/async";
-import { turfs } from "./sample-data";
+import { turfs, accounts } from "./sample-data";
 
-export const guestApi = {
+export const authenticateApi = {
   signUp: () => { },
-  signIn: () => { },
-};
 
+  signIn: async ({ username, password }) => {
+    await waitTimeout(500);
+    const user = accounts.users.find(
+      (user) => user.username === username && user.password === password
+    );
+    return user;
+  },
+};
 
 export const authApi = {
 

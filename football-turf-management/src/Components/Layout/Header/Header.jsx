@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../../contexts/userContext";
 import "./Header.scss";
 import "boxicons";
 
 export const Header = () => {
+
+  const { user, signOut } = useContext(UserContext);
+
   return (
     <header>
       <div className="nav-container">
@@ -32,15 +37,25 @@ export const Header = () => {
         </ul>
 
         {/* Name account */}
-        <div className="account">
-          <box-icon name="user-circle" type="solid" color="#2288ff"></box-icon>
-          <h2>Duong Phuoc Long</h2>
-        </div>
+        {user && (
+          <div className="account">
+            <box-icon
+              name="user-circle"
+              type="solid"
+              color="#2288ff"
+            ></box-icon>
+            <h2>{user.username}</h2>
+          </div>
+        )}
 
         {/* Login button */}
-        <Link to={"/login"} className="btn">
-          <button>Login</button>
-        </Link>
+        {user ? (
+          <button onClick={() => signOut()}>Logout</button>
+        ) : (
+          <Link to={"/login"} className="btn">
+            <button>Login</button>
+          </Link>
+        )}
       </div>
     </header>
   );

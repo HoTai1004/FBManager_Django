@@ -204,3 +204,34 @@ export const turfs = [
   },
 ];
 
+export const accounts = {
+  owner: [
+    {
+      id: "1",
+      username: "long",
+      address: "13 Nguyen Van Linh",
+      image: "",
+      phone: "123456",
+      balance: 0,
+      password: "abcdef",
+      role: "owner",
+    },
+  ],
+
+  renter: [
+    {
+      id: "1",
+      username: "lin",
+      image: "",
+      phone: "123123",
+      balance: 0,
+      password: "98765",
+      role: "renter",
+    },
+  ],
+
+  users: [
+    { username: "long", password: "abcdef", image: "", role: "owner", },
+    { username: "lin", password: "98765", image: "", role: "renter", },
+  ]
+};
