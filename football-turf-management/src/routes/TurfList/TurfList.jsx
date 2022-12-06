@@ -8,7 +8,51 @@ import { SearchTurf } from "../../Components/SearchTurf/SearchTurf";
 import { TurfCard } from "./TurfCard/TurfCard";
 import "./TurfList.scss";
 
-export const TurfList = () => {
+const TurfListOwner = () => {
+
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await authApi.getTurfList();
+      setData(data);
+    };
+    getData();
+  }, []);
+
+  return (
+    <Layout>
+      <div className="turf-list-it4">
+        <div className="title">
+          <h1>Your Football Turfs</h1>
+          <p>
+            Add, edit and manage your turfs.
+          </p>
+        </div>
+
+        {/* Search For Turf list */}
+        <SearchTurf />
+
+        {/* Turf list */}
+        <div className="list-container">
+          <div className="list">
+            {!data
+              ? "Loading..."
+              : data.map((turf, i) => {
+                return (
+                  <Link to={`${turf.id}`} key={i}>
+                    <TurfCard turf={turf} />
+                  </Link>
+                );
+              })}
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+const TurfListRenter = () => {
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -48,5 +92,13 @@ export const TurfList = () => {
         </div>
       </div>
     </Layout>
+  );
+};
+
+
+export const TurfList = () => {
+  return (
+    // <TurfListOwner />
+    <TurfListRenter />
   );
 };
