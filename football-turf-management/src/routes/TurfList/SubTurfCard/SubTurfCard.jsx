@@ -22,7 +22,7 @@ export const SubTurfCard = ({ subTurf }) => {
         content: ({ close }) => user.role === "owner" ? (
           <EditSubTurfModal close={close} />
         ) : (
-          <BookSubTurfModal close={close} />
+          <BookSubTurfModal close={close} price={price} />
         )
       })}
     >

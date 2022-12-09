@@ -1,13 +1,13 @@
 import React from "react";
 import './BookSubTurfModal.scss';
 
-export const BookSubTurfModal = ({ close }) => {
+export const BookSubTurfModal = ({ close, price }) => {
   return (
     <div className="modal-container">
       <div className="book-modal-container">
         <div className="content">
           <p>Do you want to book a</p>
-          <h1>$100 football turf</h1>
+          <h1>${price} football turf</h1>
           <p>for your match ?</p>
         </div>
         <div className="button-container">
