@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AddTurfModal } from "../../Components/Modals/AddTurfModal/AddTurfModal";
-import { useContext } from "react";
 import { ModalServiceContext } from "../../Components/Modal/ModalService";
+import { UserContext } from "../../contexts/userContext";
 import './SearchTurf.scss';
 
 export const SearchTurf = () => {
 
   const { openModal } = useContext(ModalServiceContext);
+
+  const { user } = useContext(UserContext);
 
   return (
     <div className='search-form'>
@@ -15,16 +17,19 @@ export const SearchTurf = () => {
         <box-icon name='search'></box-icon>
         <input type="text" placeholder='Search for football turf' />
       </div>
-      <button
-        className="add-turf"
-        onClick={() => openModal({
-          title: "Add turf",
-          width: "500px",
-          content: ({ close }) => <AddTurfModal close={close} />,
-        })}
-      >
-        Add football turf
-      </button>
+
+      {user.role === "owner" && (
+        <button
+          className="add-turf"
+          onClick={() => openModal({
+            title: "Add turf",
+            width: "500px",
+            content: ({ close }) => <AddTurfModal close={close} />,
+          })}
+        >
+          Add football turf
+        </button>
+      )}
     </div>
   );
 };

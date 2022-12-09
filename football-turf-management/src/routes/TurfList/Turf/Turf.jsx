@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Layout } from "../../../Components/Layout/Layout";
+import { UserContext } from "../../../contexts/userContext";
 import { SelectTimeAndInfoManagement } from "../../../Components/SelectTimeAndInfoManagement/SelectTimeAndInfoManagement";
 import { authApi } from "../../../api/mock-api";
 import "./Turf.scss";
@@ -97,8 +98,15 @@ export const TurfRenter = () => {
 };
 
 export const Turf = () => {
-  return (
-    // <TurfOwner />
-    <TurfRenter />
-  );
+  const { user } = useContext(UserContext);
+
+  if (user.role === "owner") {
+    return <TurfOwner />;
+  }
+
+  if (user.role === "renter") {
+    return <TurfRenter />;
+  }
+
+  return null;
 };

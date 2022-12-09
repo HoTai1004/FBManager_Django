@@ -2,11 +2,14 @@ import React, { useContext } from "react";
 import Select from 'react-select'
 import { AddSubTurfModal } from "../Modals/AddSubTurfModal/AddSubTurfModal";
 import { ModalServiceContext } from "../Modal/ModalService";
+import { UserContext } from "../../contexts/userContext";
 import './SelectTimeAndInfoManagement.scss';
 
 export const SelectTimeAndInfoManagement = () => {
 
   const { openModal } = useContext(ModalServiceContext);
+
+  const { user } = useContext(UserContext);
 
   return (
     <div className="select-manage">
@@ -15,16 +18,19 @@ export const SelectTimeAndInfoManagement = () => {
         <box-icon name='time-five'></box-icon>
         <Select options={timeFrames} className="select" />
       </div>
-      <button
-        className="manage-info"
-        onClick={() => openModal({
-          title: "Add sub turf",
-          width: "500px",
-          content: ({ close }) => <AddSubTurfModal close={close} />
-        })}
-      >
-        Add sub turf
-      </button>
+
+      {user.role === "owner" && (
+        <button
+          className="manage-info"
+          onClick={() => openModal({
+            title: "Add sub turf",
+            width: "500px",
+            content: ({ close }) => <AddSubTurfModal close={close} />
+          })}
+        >
+          Add sub turf
+        </button>
+      )}
     </div>
   );
 };

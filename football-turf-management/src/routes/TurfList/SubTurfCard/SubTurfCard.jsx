@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { BookSubTurfModal } from "../../../Components/Modals/BookSubTurfModal/BookSubTurfModal";
+import { EditSubTurfModal } from "../../../Components/Modals/EditSubTurfModal/EditSubTurfModal";
+import { UserContext } from "../../../contexts/userContext";
 import { ModalServiceContext } from "../../../Components/Modal/ModalService";
 import "./SubTurfCard.scss";
 
@@ -7,15 +9,21 @@ export const SubTurfCard = ({ subTurf }) => {
 
   const { openModal } = useContext(ModalServiceContext);
 
+  const { user } = useContext(UserContext);
+
   const { label, imgSrc, price } = subTurf;
 
   return (
     <div
       className="sub-turf-card-f32"
       onClick={() => openModal({
-        title: "",
-        width: "400px",
-        content: ({ close }) => <BookSubTurfModal close={close} />
+        title: user.role === "owner" ? "Edit subturf" : "",
+        width: user.role === "owner" ? "500px" : "400px",
+        content: ({ close }) => user.role === "owner" ? (
+          <EditSubTurfModal close={close} />
+        ) : (
+          <BookSubTurfModal close={close} />
+        )
       })}
     >
       <div className="status">
