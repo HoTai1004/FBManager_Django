@@ -54,7 +54,13 @@ export const Header = () => {
             className="btn"
             onClick={() => signOut()}
             style={{
-
+              background: "#2288ff",
+              border: "none",
+              padding: "7px 25px",
+              borderRadius: "5rem",
+              color: "#fff",
+              fontSize: "1rem",
+              cursor: "pointer",
             }}
           >
             Logout
