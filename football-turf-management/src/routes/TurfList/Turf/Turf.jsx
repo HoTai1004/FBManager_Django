@@ -3,9 +3,9 @@ import { Layout } from "../../../Components/Layout/Layout";
 import { UserContext } from "../../../contexts/userContext";
 import { SelectTimeAndInfoManagement } from "../../../Components/SelectTimeAndInfoManagement/SelectTimeAndInfoManagement";
 import { authApi } from "../../../api/mock-api";
-import "./Turf.scss";
 import { SubTurfCard } from "../SubTurfCard/SubTurfCard";
 import { useParams } from "react-router-dom";
+import "./Turf.scss";
 
 const TurfOwner = () => {
   const { turfId } = useParams();
@@ -42,6 +42,7 @@ const TurfOwner = () => {
                 <SubTurfCard
                   key={t.id}
                   subTurf={t}
+                  turfId={t.id}
                 />
               );
             })}
@@ -87,6 +88,7 @@ export const TurfRenter = () => {
                 <SubTurfCard
                   key={t.id}
                   subTurf={t}
+                  turfId={t.id}
                 />
               );
             })

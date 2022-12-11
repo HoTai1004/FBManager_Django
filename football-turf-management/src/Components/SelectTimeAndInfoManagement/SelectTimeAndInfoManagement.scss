@@ -4,27 +4,8 @@
   justify-content: space-between;
   margin-top: 40px;
 
-  &>.form-control {
-    display: flex;
-    align-items: center;
-    column-gap: 0.5rem;
-
-    &>label {
-      color: #314862;
-      font-weight: bold;
-      font-size: 20px;
-      margin-left: 120px;
-
-    }
-
-    &>.select {
-      margin-left: 1px;
-      width: 200px;
-    }
-  }
-
   button {
-    margin-right: 110px;
+    margin-left: 130px;
     padding: 8px 22px;
     background: #02d62d;
     border-radius: 5rem;

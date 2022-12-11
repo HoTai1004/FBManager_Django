@@ -7,6 +7,27 @@
     padding: 0px;
     overflow: auto;
 
+    &>.form-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 0.5rem;
+
+
+      &>label {
+        color: #314862;
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 20px;
+
+      }
+
+      &>.select {
+        margin-left: 1px;
+        width: 140px;
+      }
+    }
+
     &>.content {
       text-align: center;
       margin-top: 5px;

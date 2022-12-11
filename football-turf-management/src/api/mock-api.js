@@ -24,4 +24,9 @@ export const authApi = {
     await waitTimeout(500);
     return turfs.find((turf) => turf.id === turfId);
   },
+
+  bookSubTurf: async (booking) => {
+    await waitTimeout(2000);
+    return { ...booking, id: "fg432f2" };
+  },
 }; 

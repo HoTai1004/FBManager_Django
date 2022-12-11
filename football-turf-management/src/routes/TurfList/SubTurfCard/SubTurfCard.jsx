@@ -5,7 +5,7 @@ import { UserContext } from "../../../contexts/userContext";
 import { ModalServiceContext } from "../../../Components/Modal/ModalService";
 import "./SubTurfCard.scss";
 
-export const SubTurfCard = ({ subTurf }) => {
+export const SubTurfCard = ({ turfId, subTurf }) => {
 
   const { openModal } = useContext(ModalServiceContext);
 
@@ -18,11 +18,17 @@ export const SubTurfCard = ({ subTurf }) => {
       className="sub-turf-card-f32"
       onClick={() => openModal({
         title: user.role === "owner" ? "Edit subturf" : "",
-        width: user.role === "owner" ? "500px" : "400px",
+        width: "500px",
         content: ({ close }) => user.role === "owner" ? (
           <EditSubTurfModal close={close} />
         ) : (
-          <BookSubTurfModal close={close} price={price} />
+          <BookSubTurfModal
+            close={close}
+            turfId={turfId}
+            userId={user.id}
+            subTurf={subTurf}
+
+          />
         )
       })}
     >
