@@ -8,7 +8,7 @@ const OwnerBookingList = () => {
     <Layout>
       <div className="booking-turf">
         <div className="title">
-          <h1>User Booking Your Turf</h1>
+          <h1>Renter Booking Your Turf</h1>
           <p>Manage your user booking list as well as your balance.</p>
         </div>
 
@@ -25,7 +25,7 @@ const OwnerBookingList = () => {
   );
 }
 
-const UserBookingList = () => {
+const RenterBookingList = () => {
   return (
     <Layout>
       <div className="booking-turf">
@@ -55,8 +55,8 @@ export const BookingList = () => {
     return <OwnerBookingList />
   }
 
-  if (searchParams.get("role") === "user") {
-    return <UserBookingList />
+  if (searchParams.get("role") === "renter") {
+    return <RenterBookingList />
   }
 
   return null;
