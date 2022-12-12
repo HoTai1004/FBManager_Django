@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
 import { UserContext } from "../../../contexts/userContext";
 import "./Header.scss";
 import "boxicons";
@@ -45,6 +44,9 @@ export const Header = () => {
               color="#2288ff"
             ></box-icon>
             <h2>{user.username}</h2>
+            <Link to={`/booking-list?role=${user.role}`}>
+              {user.role === "owner" ? "Booking List" : "Your Booking"}
+            </Link>
           </div>
         )}
 
