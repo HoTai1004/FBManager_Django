@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Layout } from "../../Components/Layout/Layout";
+import { authApi } from "../../api/mock-api";
 import './BookingList.scss';
 
 const OwnerBookingList = () => {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await authApi.getBookedSubTurf();
+      setData(data);
+    }
+    getData();
+  }, []);
+
   return (
     <Layout>
       <div className="booking-turf">
@@ -12,7 +23,7 @@ const OwnerBookingList = () => {
           <p>Manage your user booking list as well as your balance.</p>
         </div>
 
-        {/* Number of small turfs in a big turf */}
+        {/* Number of subTurfs renters book in a big turf */}
         <div className="booking-list">
           {/* {!turf
               ? "Loading..."
@@ -26,6 +37,16 @@ const OwnerBookingList = () => {
 }
 
 const RenterBookingList = () => {
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await authApi.getBookedSubTurf();
+      setData(data);
+    }
+    getData();
+  }, []);
+
   return (
     <Layout>
       <div className="booking-turf">

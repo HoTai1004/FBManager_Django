@@ -1,5 +1,5 @@
 import { waitTimeout } from "../utils/async";
-import { turfs, accounts } from "./sample-data";
+import { turfs, accounts, bookingList } from "./sample-data";
 
 export const authenticateApi = {
   signUp: () => { },
@@ -28,5 +28,10 @@ export const authApi = {
   bookSubTurf: async (booking) => {
     await waitTimeout(2000);
     return { ...booking, id: "fg432f2" };
+  },
+
+  getBookedSubTurf: async () => {
+    await waitTimeout(1000);
+    return bookingList;
   },
 }; 

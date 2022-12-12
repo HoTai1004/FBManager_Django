@@ -227,3 +227,51 @@ export const accounts = {
     { username: "lin", password: "98765", image: "", role: "renter", },
   ]
 };
+
+export const bookingList = [
+  {
+    id: "rf34fq",
+    turfId: "1",
+    subTurfId: "3",
+    userId: "",
+    start: "7h00 am",
+    end: "8h30 am",
+    price: 561,
+  },
+  {
+    id: "qwerty",
+    turfId: "3",
+    subTurfId: "4",
+    userId: "",
+    start: "9h00 am",
+    end: "10h30 am",
+    price: 80,
+  },
+  {
+    id: "asdfh",
+    turfId: "5",
+    subTurfId: "2",
+    userId: "",
+    start: "13h00 pm",
+    end: "15h30 pm",
+    price: 37,
+  },
+  {
+    id: "tyuiop",
+    turfId: "7",
+    subTurfId: "4",
+    userId: "",
+    start: "15h00 pm",
+    end: "16h30 pm",
+    price: 110,
+  },
+  {
+    id: "hjklg",
+    turfId: "8",
+    subTurfId: "1",
+    userId: "",
+    start: "19h00 pm",
+    end: "21h00 pm",
+    price: 137.5,
+  },
+];
