@@ -10,6 +10,7 @@ import "./TurfList.scss";
 const TurfListOwner = () => {
 
   const [data, setData] = useState();
+  const [searchText, setSearchText] = useState();
 
   useEffect(() => {
     const getData = async () => {
@@ -18,6 +19,28 @@ const TurfListOwner = () => {
     };
     getData();
   }, []);
+
+  const displayList = () => {
+    if (!data) {
+      return "Loading..."
+    }
+
+    const list = !searchText ? (
+      data
+    ) : (
+      data.filter((d) => {
+        return d.label.toLowerCase().includes(searchText.toLowerCase())
+      })
+    );
+
+    return list.map((turf, i) => {
+      return (
+        <Link to={`${turf.id}`} key={i}>
+          <TurfCard turf={turf} />
+        </Link>
+      );
+    })
+  }
 
   return (
     <Layout>
@@ -30,20 +53,12 @@ const TurfListOwner = () => {
         </div>
 
         {/* Search For Turf list */}
-        <SearchTurf />
+        <SearchTurf searchText={searchText} onSearch={setSearchText} />
 
         {/* Turf list */}
         <div className="list-container">
           <div className="list">
-            {!data
-              ? "Loading..."
-              : data.map((turf, i) => {
-                return (
-                  <Link to={`${turf.id}`} key={i}>
-                    <TurfCard turf={turf} />
-                  </Link>
-                );
-              })}
+            {displayList()}
           </div>
         </div>
       </div>
@@ -53,6 +68,7 @@ const TurfListOwner = () => {
 
 const TurfListRenter = () => {
   const [data, setData] = useState();
+  const [searchText, setSearchText] = useState();
 
   useEffect(() => {
     const getData = async () => {
@@ -61,6 +77,28 @@ const TurfListRenter = () => {
     };
     getData();
   }, []);
+
+  const displayList = () => {
+    if (!data) {
+      return "Loading..."
+    }
+
+    const list = !searchText ? (
+      data
+    ) : (
+      data.filter((d) => {
+        return d.label.toLowerCase().includes(searchText.toLowerCase())
+      })
+    );
+
+    return list.map((turf, i) => {
+      return (
+        <Link to={`${turf.id}`} key={i}>
+          <TurfCard turf={turf} />
+        </Link>
+      );
+    })
+  }
 
   return (
     <Layout>
@@ -73,20 +111,12 @@ const TurfListRenter = () => {
         </div>
 
         {/* Search For Turf list */}
-        <SearchTurf />
+        <SearchTurf searchText={searchText} onSearch={setSearchText} />
 
         {/* Turf list */}
         <div className="list-container">
           <div className="list">
-            {!data
-              ? "Loading..."
-              : data.map((turf, i) => {
-                return (
-                  <Link to={`${turf.id}`} key={i}>
-                    <TurfCard turf={turf} />
-                  </Link>
-                );
-              })}
+            {displayList()}
           </div>
         </div>
       </div>

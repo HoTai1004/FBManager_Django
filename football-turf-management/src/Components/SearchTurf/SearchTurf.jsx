@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { AddTurfModal } from "../../Components/Modals/AddTurfModal/AddTurfModal";
 import { ModalServiceContext } from "../../Components/Modal/ModalService";
 import { UserContext } from "../../contexts/userContext";
+import { bindInput } from "../../react/bindInput";
 import './SearchTurf.scss';
 
-export const SearchTurf = () => {
+export const SearchTurf = ({ searchText, onSearch }) => {
 
   const { openModal } = useContext(ModalServiceContext);
 
@@ -15,7 +16,16 @@ export const SearchTurf = () => {
       <div className='form-control'>
         <label htmlFor='search'>Search</label>
         <box-icon name='search'></box-icon>
-        <input type="text" placeholder='Search for football turf' />
+        <input
+          {...{
+            ...bindInput({
+              value: searchText,
+              onChange: (v) => onSearch(v)
+            }),
+            type: "text",
+            placeholder: 'Search for football turf'
+          }}
+        />
       </div>
 
       {user.role === "owner" && (
