@@ -8,6 +8,14 @@ export const SignupOwner = () => {
     <Layout>
       <div className="Signup-form">
         <div className="form-control">
+          <div className="username">Username</div>
+          <input type="text" placeholder="Your Username" required />
+        </div>
+        <div className="form-control">
+          <div className="password">Password</div>
+          <input type="password" placeholder="At Least 8 characters" required />
+        </div>
+        <div className="form-control">
           <div className="name">Full Name</div>
           <input type="text" placeholder="Your Name" required />
         </div>
@@ -27,10 +35,6 @@ export const SignupOwner = () => {
           <div className="balance">Balance</div>
           <input type="number" placeholder="$0..." required />
         </div>
-        <div className="form-control">
-          <div className="password">Password</div>
-          <input type="password" placeholder="At Least 8 characters" required />
-        </div>
         <button className="button">
           Signup
         </button>
@@ -49,6 +53,14 @@ export const SignupRenter = () => {
     <Layout>
       <div className="Signup-form">
         <div className="form-control">
+          <div className="username">Username</div>
+          <input type="text" placeholder="Your Username" required />
+        </div>
+        <div className="form-control">
+          <div className="password">Password</div>
+          <input type="password" placeholder="At Least 8 characters" required />
+        </div>
+        <div className="form-control">
           <div className="name">Full Name</div>
           <input type="text" placeholder="Your Name" required />
         </div>
@@ -63,10 +75,6 @@ export const SignupRenter = () => {
         <div className="form-control">
           <div className="balance">Balance</div>
           <input type="number" placeholder="$0..." required />
-        </div>
-        <div className="form-control">
-          <div className="password">Password</div>
-          <input type="password" placeholder="At Least 8 characters" required />
         </div>
         <button className="button">
           Signup
