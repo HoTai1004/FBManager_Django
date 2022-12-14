@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 
 class Turf(models.Model):
     name = models.CharField(max_length=200, null=False, blank=False)
@@ -17,3 +17,9 @@ class Turf(models.Model):
 class TimeRent(models.Model):
     startTime = models.TimeField()
     endTime = models.TimeField()
+
+class Booking(models.Model):
+    turnId = models.ForeignKey(Turf,on_delete=models.CASCADE) 
+    userId = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    timeID = models.ForeignKey(TimeRent,on_delete=models.CASCADE)
+    price =models.DecimalField(max_digits = 5,decimal_places = 2)
