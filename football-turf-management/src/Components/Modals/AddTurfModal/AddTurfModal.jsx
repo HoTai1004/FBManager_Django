@@ -26,14 +26,16 @@ export const AddTurfModal = ({ close, onAdd, turflist }) => {
           <input
             type="file"
             required
-            onChange={(e) => setData({ ...data, imgSrc: e.target.files[0] })}
+            onChange={(e) => setData({ ...data, imgSrc: e.target.files[0].name })}
           />
         </div>
         <button
           className="add-btn"
           onClick={() => {
-            console.log("image : ", data.imgSrc.name)
-            onAdd([...turflist, data])
+            const id = 9;
+            const turf = { id, ...data }
+            onAdd([...turflist, turf])
+            console.log(turf)
             close()
           }}
         >

@@ -7,7 +7,7 @@ import { SubTurfCard } from "../SubTurfCard/SubTurfCard";
 import { useParams } from "react-router-dom";
 import "./Turf.scss";
 
-const TurfOwner = () => {
+const TurfOwner = ({ t, set }) => {
   const { turfId } = useParams();
 
   const [turf, setTurf] = useState();
@@ -31,7 +31,7 @@ const TurfOwner = () => {
         </div>
 
         {/* Select Time And Info Management */}
-        <SelectTimeAndInfoManagement />
+        <SelectTimeAndInfoManagement turf={turf} setTurf={setTurf} />
 
         {/* Number of small turfs in a big turf */}
         <div className="list-w567">
