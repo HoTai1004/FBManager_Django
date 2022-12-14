@@ -4,7 +4,9 @@ from rest_framework.decorators import api_view
 from . serializers import TurfSerializer
 from . models import Turf
 from . models import TimeRent
+from . models import Booking
 from . serializers import TimeSerializer
+from . serializers import BookingSerializer
 # Create your views here.
 
 
@@ -62,8 +64,8 @@ def getAllTime(request):
 
 @api_view(['GET'])
 def ViewTime(request,pk):
-  time=Turf.objects.get(id=pk)
-  serialier = TurfSerializer(time, many=False)
+  time=TimeRent.objects.get(id=pk)
+  serialier = TimeSerializer(time, many=False)
   return Response(serialier.data)
 
 @api_view(['POST'])
@@ -86,4 +88,31 @@ def UpdateTime(request,pk):
 def DeleteTime(request,pk):
   time=TimeRent.objects.get(id=pk)
   time.delete()
+  return Response('Item delete succesfully!')
+
+
+# Booking
+@api_view(["GET"])
+def getAllBooking(request):
+  bookings = Booking.objects.all()
+  serialier = BookingSerializer(bookings, many=True)
+  return Response(serialier.data)
+
+@api_view(['GET'])
+def ViewBooking(request,pk):
+  booking=Booking.objects.get(id=pk)
+  serialier = BookingSerializer(booking, many=False)
+  return Response(serialier.data)
+
+@api_view(['POST'])
+def CreateBooking(request):
+  serialier = BookingSerializer(data=request.data)
+  if serialier.is_valid():
+    serialier.save()
+  return Response(serialier.data)
+
+@api_view(['GET'])
+def DeleteBooking(request,pk):
+  booking=BookingSerializer.objects.get(id=pk)
+  booking.delete()
   return Response('Item delete succesfully!')
