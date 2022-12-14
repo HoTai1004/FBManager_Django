@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from . serializers import TurfSerializer
 from . models import Turf
+from . models import TimeRent
+from . serializers import TimeSerializer
 # Create your views here.
 
 
@@ -16,7 +18,7 @@ def turfOverview(request):
   }
   return Response(api_urls)
 
-
+# Turf
 @api_view(["GET"])
 def getAllTurf(request):
   turfs = Turf.objects.all()
@@ -49,4 +51,39 @@ def UpdateTurf(request,pk):
 def DeleteTurf(request,pk):
   turf=Turf.objects.get(id=pk)
   turf.delete()
+  return Response('Item delete succesfully!')
+
+# Time
+@api_view(["GET"])
+def getAllTime(request):
+  times = TimeRent.objects.all()
+  serialier = TimeSerializer(times, many=True)
+  return Response(serialier.data)
+
+@api_view(['GET'])
+def ViewTime(request,pk):
+  time=Turf.objects.get(id=pk)
+  serialier = TurfSerializer(time, many=False)
+  return Response(serialier.data)
+
+@api_view(['POST'])
+def CreateTime(request):
+  serialier = TimeSerializer(data=request.data)
+  if serialier.is_valid():
+    serialier.save()
+  return Response(serialier.data)
+
+@api_view(['POST'])
+def UpdateTime(request,pk):
+  time = TimeRent.objects.get(id=pk)
+  serialier = TimeSerializer(instance=time,data=request.data)
+  if serialier.is_valid():
+    serialier.save()
+  return Response(serialier.data)
+
+
+@api_view(['GET'])
+def DeleteTime(request,pk):
+  time=TimeRent.objects.get(id=pk)
+  time.delete()
   return Response('Item delete succesfully!')
