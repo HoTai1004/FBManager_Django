@@ -14,3 +14,6 @@ class Turf(models.Model):
 #     name = models.CharField(max_length=200, null = False , blank = False)
 #     image = models.ImageField(upload_to = "images/")
 #     phone = models.CharField(max_length=10, null= False, blank= False)
+class TimeRent(models.Model):
+    startTime = models.TimeField()
+    endTime = models.TimeField()

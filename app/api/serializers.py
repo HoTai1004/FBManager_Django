@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from . models import Turf
+from . models import TimeRent
 # from django.contrib.auth.models import User
 # from rest_framework.response import Response
 # from rest_framework import status
@@ -15,3 +16,7 @@ class TurfSerializer(serializers.ModelSerializer):
 #   class Meta:
 #     model = User
 #     fields = ["id", "first_name", "last_name", "username"]
+class TimeSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = TimeRent
+    fields = '__all__'
