@@ -5,7 +5,7 @@ import { UserContext } from "../../contexts/userContext";
 import { bindInput } from "../../react/bindInput";
 import './SearchTurf.scss';
 
-export const SearchTurf = ({ searchText, onSearch }) => {
+export const SearchTurf = ({ searchText, onSearch, turflist, onAdd }) => {
 
   const { openModal } = useContext(ModalServiceContext);
 
@@ -34,7 +34,7 @@ export const SearchTurf = ({ searchText, onSearch }) => {
           onClick={() => openModal({
             title: "Add turf",
             width: "500px",
-            content: ({ close }) => <AddTurfModal close={close} />,
+            content: ({ close }) => <AddTurfModal close={close} onAdd={onAdd} turflist={turflist} />,
           })}
         >
           Add football turf

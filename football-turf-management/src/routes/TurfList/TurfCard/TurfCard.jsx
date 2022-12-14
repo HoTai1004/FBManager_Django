@@ -5,7 +5,7 @@ export const TurfCard = ({ turf }) => {
 
   const { label, imgSrc, subTurfs } = turf;
 
-  const lowestPrice = Math.min(...subTurfs.map((s) => s.price));
+  const lowestPrice = subTurfs === null ? 0 : Math.min(...subTurfs.map((s) => s.price));
 
   return (
     <div className="turf-card-w43">

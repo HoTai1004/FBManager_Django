@@ -53,7 +53,12 @@ const TurfListOwner = () => {
         </div>
 
         {/* Search For Turf list */}
-        <SearchTurf searchText={searchText} onSearch={setSearchText} />
+        <SearchTurf
+          searchText={searchText}
+          onSearch={setSearchText}
+          turflist={data}
+          onAdd={setData}
+        />
 
         {/* Turf list */}
         <div className="list-container">
